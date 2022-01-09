@@ -1,0 +1,45 @@
+
+<%- include('../_layouts/adminheader'); %>
+
+<a href="/admin/statistics/nhanviengiao" class="btn btn-primary">Trở về</a>
+
+<h2 class="page-title">Nhân viên </h2>
+
+    <p>Tổng số hóa đơn đã giao:<b class="tong"><%= count%></b></p>
+    <p>Nhân viên giao </p><h3><%= shipper.name%></h3>
+    <p>Số điện thoại</p><h3><%= shipper.tel%></h3>
+  
+             
+           
+    <table class="table table-striped table-dark  ">
+        <thead class="thead-dark">
+            <tr class="home">
+                <th>Mã hóa đơn</th>
+                <th>Nông dân </th>
+                <th>Địa chỉ</th>
+                <th>Số điện thoại</th>
+                
+                <th>Trạng thái</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+           
+            <%orders.forEach(function(order){%>
+                <tr>
+                    <td><%=order._id%></td>
+                    <td><%=order.username%></td>
+                    <td><%=order.address%></td>
+                    <td><%=order.tel%></td>
+                    <td><%=order.status%></td>
+                    
+                   
+                </tr>
+               
+           <% })%>
+        
+        </tbody>
+    </table>
+  
+   
+<%- include('../_layouts/adminfooter');%>

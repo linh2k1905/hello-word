@@ -1,0 +1,55 @@
+<%- include('../_layouts/adminheader'); %>
+<a href="/admin/users" class="btn btn-primary">Trở về</a>
+
+   
+
+           <h3>Chỉnh sửa thông tin người  dùng</h3>
+
+            <h4><%=users.username %></h4>
+
+    <form action="/admin/users/edit/<%= users.id%>" method="post">
+        <div class="form-group">
+            <label for="title">Tên </label>
+            <input type="text"  class="form-control" name="name"  value= "<%= users.name %>" placeholder="Tên">
+        </div>
+        <div class="form-group">
+            <label for="">Điện thoại </label>
+            <input type="text"  class="form-control" name="tel"  value= "<%=users.tel  %>" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label for="">Địa chỉ</label>
+            <input type="text"  class="form-control" name="address"  value= "<%=users.address %>" placeholder="Title">
+        </div>
+        <div class="form-group">
+            
+        </div>
+       
+           <button>Sửa</button>
+    
+    </form>
+            <!-- Tên</th><td><%= users.name%></td></tr>
+            <tr> <th>Số điện thoại </th><td><%= users.tel%></td></tr>
+            <tr><th>Địa chỉ</th> <td><%= users.address%></td></tr>
+            <tr><th>Tên đầy đủ</th><td><%= users.username%></td></tr>
+            <tr><th>Mật khẩu</th><td><%= users.password%></td></tr>
+            <tr><th>Vai trò</th> <%if(users.admin==0){%>
+                <td>Nông dân</td>
+               <%}else{%>
+                <td>Quản trị</td></tr>
+            <%}%>
+            
+        
+
+ 
+   
+    
+    
+     -->
+   
+    
+    
+      
+    
+
+</table>
+<%- include('../_layouts/adminfooter'); %>

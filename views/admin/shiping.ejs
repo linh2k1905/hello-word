@@ -1,0 +1,42 @@
+
+<%- include('../_layouts/adminheader'); %>
+<h2 class="page-title">Đơn hàng</h2>
+<a href="/admin/shippers" class="btn btn-primary">Trở về</a>
+
+   
+    <table class="table table-striped table-dark  ">
+        <thead class="thead-dark">
+            <tr class="home">
+                <th>Mã hóa đơn</th>
+                <th>Nông dân </th>
+                <th>Địa chỉ</th>
+                <th>Giao hàng</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+           
+            <%orders.forEach(function(order){%>
+                <tr>
+                   
+                            <td><%=order._id%></td>
+                            <td><%=order.username%></td>
+                            <td><%=order.address%></td>
+                            <td><a href="/admin/shippers/shiping/<%=order.id%>">Giao hàng</a></td>
+                            
+                               
+                       
+                                  
+                                   
+                      
+                                
+                         
+                        
+                </tr>
+           
+                <% })%>
+        
+        </tbody>
+    </table>
+   
+<%- include('../_layouts/adminfooter');%>

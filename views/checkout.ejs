@@ -1,0 +1,65 @@
+<%- include('_layouts/header'); %>
+
+<%if (typeof cart!== "undefined"){%>
+    <h3 class="text-center">Giỏ hàng</h3>
+    <table class="table table-striped alignmiddle">
+        <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th></th>
+            <th>SL</th>
+            <th></th>
+            <th>Xóa</th>
+            <th>Tổng mỗi sản phẩm</th>
+        </tr>
+        <%var total =0 %>
+
+        <%cart.forEach(function(product){%>
+            <% var sub =parseFloat(product.qty * product.price).toFixed(2)%>
+            <% total += +sub %>
+            <tr>
+                <td><img class ="cpi" src="<%=product.image%>" alt=""></td>
+                <td><%=product.title%></td>
+                <td><%=product.price%></td>
+                
+                
+                    <td><a class="qty"href="/cart/update/<%= product.title%>?action=add">+</a></td>
+                    <td class="qty"><%=product.qty%></td>
+                    <td><a class="qty" href="/cart/update/<%= product.title%>?action=remove">-</a></td>
+
+                    
+                
+                <td> <a class="xoa"  href="/cart/update/<%= product.title%>?action=clear">Xóa</a></td>
+                <td><%= sub%></td>
+               
+            </tr>
+            
+            <%})%>
+            <tr><td colspan="6" >
+                Tổng tất cả sản phẩm:<b> <%=parseFloat(total).toFixed(2)%></b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" align="right"><a class="btn btn-danger clearcart" href="/cart/clear">Dọn giỏ hàng</a></td>
+            <td colspan="5" align="right"><a class="btn btn-primary buynow" href="/cart/buynow">Mua tất cả</a></td>
+        </tr>
+    </table>
+
+        
+    <%} else{%>
+        <h3 class="text-center">Giỏ hàng không có sản phẩm</h3>
+        <%}%>
+        <script>
+            $(function(){
+            
+ $('a.clearcart').on('click',function(e){
+    
+     if(!confirm('Bạn muốn dọn sạch giỏ hàng???'))  e.preventDefault()
+ })
+        
+     
+           
+})       
+        </script>
+<%- include('_layouts/footer'); %>

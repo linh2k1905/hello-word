@@ -1,0 +1,36 @@
+<%- include('../_layouts/adminheader'); %>
+<h3><%-title%></h3>
+<a href="/admin/shippers" class="btn btn-primary">Trở về</a>
+<form action="/admin/shippers/edit/<%=shippers._id%>" method="post">
+    <div class="form-group">
+        <label for="name">Họ và Tên </label>
+        <input type="text"  class="form-control" name="name" value="<%=shippers.name%>">
+    </div>
+
+    <div class="form-group">
+        <label for="tel">Số điện thoại</label>
+        <input type="text"  class="form-control" name="tel"   value="<%=shippers.tel%>" >
+    </div>
+    <div class="form-group">
+        <label for="cmnd">Chứng minh nhân dân</label>
+        <input type="text"  class="form-control" name="cmnd"  value="<%=shippers.cmnd%>" >
+    </div>
+    <div class="form-group">
+        <label for="address">Địa chỉ</label>
+        <input type="text"  class="form-control" name="address"  value="<%=shippers.address%>" >
+    </div>
+    <div class="form-group">
+        <label for="tel">Lương</label>
+        <input type="text"  class="form-control" name="salery"  value="<%=shippers.salery%>"  >
+    </div>
+    <div class="form-group">
+        <label for="birthyear">Năm sinh</label>
+        <input type="text"  class="form-control" name="birthyear"  value="<%=shippers.birthyear%>"  >
+    </div>
+    
+    
+    <button type="submit"  class="btn btn-primary" > Chỉnh sửa</button>
+    
+
+</form>
+<%- include('../_layouts/adminfooter'); %>

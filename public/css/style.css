@@ -1,0 +1,116 @@
+
+
+img.pimage{
+    width: 120px;
+    height: 120px;
+   
+}
+a.pa{
+    display: inline-block;
+    height: 160px;
+}
+.row.products .p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+img.spi{
+    width: 100%;
+}
+h4.indam{
+    font-weight: bold;
+}
+ul.gallery li{
+ display: inline-block;
+ margin: 20px;
+ list-style: none;
+
+}
+img.cpi{
+    width: 100px;
+
+}
+table.alignmiddle td{
+    vertical-align: middle !important;
+}
+.ajaxbg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255,255, 0.8);
+    z-index: 2;
+    display: none;
+}
+.ajaxinner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.pp{
+    position: absolute;
+    left: -3000px;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+.thanhtien{
+    color: red;
+    font-weight: 100;
+}
+.madon{
+    color: blue;
+    font-weight: 100;
+}
+.thongtinkhach{
+    color: brown;
+    font-size: 15px;
+}
+.stt{
+    color:green;
+}
+.taskbar{
+    background-color:green;
+    color: #fff;
+}
+.mauchu li a {
+    color: black;
+}
+.listheader{
+    background-color: rgb(21, 156, 209);
+    color: whitesmoke;
+}
+.brand{
+    
+    color:  honeydew;
+}
+label{
+    color: green;
+}
+marquee{
+    font-size: 30px;
+    font-weight: 800;
+    color: #8ebf42;
+    font-family: sans-serif;
+    }
+.qty{
+    font-size: 25px;
+}
+.xoa{
+    color: red;
+}
+p a{
+    color: rgb(6, 112, 6);
+    font-weight: 100px;
+    font-size: 20px;
+   
+}
+p a:hover{
+    color :goldenrod;
+    font-weight: 100px;
+    
+    
+}

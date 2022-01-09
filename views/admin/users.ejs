@@ -1,0 +1,49 @@
+<%- include('../_layouts/adminheader'); %>
+
+<table class="table table-striped ">
+    <thead>
+        <tr class="home">
+            <th>Tên đầy đủ</th>
+            <th>Số điện thoại </th>
+            <th>Tên người dùng</th>
+            <th>Trạng Thái</th>
+            <th>Vai trò</th>
+            <th> Chỉnh Sửa</th>
+            <th>Xem chi tiết</th>
+            <th>Khóa</th>
+        </tr>
+        </tr>
+
+        </tr>
+    </thead>
+    <tbody>
+<%users.forEach(function(users){%>
+ 
+   
+    <tr>
+
+    <td><%= users.name%></td>
+    <td><%= users.tel%></td>
+    <!-- <td><%= users.address%></td> -->
+    <td><%= users.username%></td>
+    <td><%= users.status%></td>
+<!-- <td><%= users.password%></td> -->
+       <%if(users.admin==0){%>
+        <td>Nông dân</td>
+       <%}else{%>
+        <td>Quản trị</td>
+    <%}%>
+    <td><a href="/admin/users/edit/<%=users._id%>">Chỉnh sửa</a></td>
+    <td><a href="/admin/users/detail_user/<%=users._id%>">Xem chi tiết</a></td>
+    <%if(users.status=="Active"){%>
+    <td><a href="/admin/users/edit_password/<%=users._id%>">Khóa</a></td>
+    <%}%>
+    <%if(users.status=="Inactive"){%>
+        <td><a href="/admin/users/unclock_password/<%=users._id%>">Mở</a></td>
+        <%}%>
+</tr>
+  </tr>
+    <%})%>
+</tbody>
+</table>
+<%- include('../_layouts/adminfooter'); %>

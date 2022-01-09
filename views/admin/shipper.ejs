@@ -1,0 +1,44 @@
+<%- include('../_layouts/adminheader'); %>
+<h3><%=title%></h3>
+<a href="/admin/shippers/add" class="btn btn-primary">Thêm nhân viên</a>
+
+<a href="/admin/shippers/shiping" class="btn btn-primary">Phân công giao hàng</a>
+<table class="table table-striped ">
+    <thead>
+        <tr class="home">
+            <th>Tên đầy đủ</th>
+            <th>Số điện thoại </th>
+            <th>Địa chỉ</th>
+            <th>Năm sinh</th>
+            <th>Chứng minh nhân dân</th>
+            <th>Lương</th>
+            <th> Sửa</th>
+            <th> Xóa</th>
+            
+            
+        </tr>
+        </tr>
+
+        </tr>
+    </thead>
+    <tbody>
+<%shippers.forEach(function(shipper){%>
+ 
+   
+    <tr>
+
+    <td><%= shipper.name%></td>
+    <td><%= shipper.tel%></td>
+    <td><%= shipper.address%></td>
+    <td><%= shipper.birthyear%></td>
+    <td><%= shipper.cmnd%></td>
+    <td><%= shipper.salery%></td>
+    <td><a href="/admin/shippers/edit/<%=shipper._id%>">Sửa</a></td>
+    <td><a href="/admin/shippers/delete/<%=shipper._id%>">Xóa</a></td>
+                   
+</tr>
+  </tr>
+    <%})%>
+</tbody>
+</table>
+<%- include('../_layouts/adminfooter'); %>

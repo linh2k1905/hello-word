@@ -1,0 +1,36 @@
+<%- include('_layouts/header_register'); %>
+
+<form action="/users/register" method="post">
+    <div class="form-group">
+        <label for="name">Họ và Tên </label>
+        <input type="text"  class="form-control" name="name"   placeholder="Tên người dùng">
+    </div>
+
+    <div class="form-group">
+        <label for="tel">Số điện thoại</label>
+        <input type="text"  class="form-control" name="tel"   placeholder="Số điện thoại">
+    </div>
+    <div class="form-group">
+        <label for="address">Địa chỉ</label>
+        <input type="text"  class="form-control" name= "address"   placeholder="Địa chỉ">
+    </div>
+    <div class="form-group">
+        <label for="username">Biệt danh</label>
+        <input type="text"  class="form-control" name="username"   placeholder="Ví dụ HaiLua1233 ">
+    </div>
+    <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password"  class="form-control" name="password"   placeholder="Mật khẩu phải chứa ký tự đặc biệt, số ,chữ hoa ">
+    </div>
+    <div class="form-group">
+        <label for="retypepassword">Mật khẩu</label>
+        <input type="password"  class="form-control" name="retypepassword"   placeholder="Mật khẩu phải chứa ký tự đặc biệt, số ,chữ hoa ">
+    </div>
+
+    
+    <button type="submit"  class="btn btn-success " >Đăng ký</button>
+    <button class="btn-link"> <a    class="stt" href="/users/login">Đã có tài khoản</a></button>
+    
+
+</form>
+<%- include('_layouts/footer'); %>

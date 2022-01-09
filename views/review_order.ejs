@@ -1,0 +1,72 @@
+<%- include('_layouts/header'); %>
+
+<%if (typeof cart!== "undefined"){%>
+    <h2 class="text-center"> <%= title%></h2>
+    <br><br><br><br>
+    <b>Thông tin nông dân:</b><br><br>
+    Tên: <%= user.name%><br><br>
+    Biệt danh: <%= user.username%><br><br>
+    Điện thoại: <%= user.tel%><br><br>
+
+
+    <table class="table table-striped alignmiddle">
+        <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th></th>
+            <th>Tổng mỗi sản phẩm</th>
+        </tr>
+        <%var total =0 %>
+
+        <%cart.forEach(function(product){%>
+            <% var sub =parseFloat(product.qty * product.price).toFixed(2)%>
+            <% total += +sub %>
+            <tr>
+                <td><img class ="cpi" src="<%=product.image%>" alt=""></td>
+                <td><%=product.title%></td>
+                <td><%=product.price%></td>
+                <td><%=product.qty%></td>
+                <td>
+                    <a href="/cart/update/<%= product.title%>?action=add">+</a>
+                    <a href="/cart/update/<%= product.title%>?action=remove">-</a>
+                    <a href="/cart/update/<%= product.title%>?action=clear">Xóa</a>
+                </td>
+                <td><%= sub%></td>
+               
+            </tr>
+            
+            <%})%>
+            <tr><td colspan="6" >
+                Tổng tất cả sản phẩm:<b> <%=parseFloat(total).toFixed(2)%></b>
+            </td>
+        </tr>
+        <tr>
+           
+            
+        </tr>
+    </table>
+    Địa chỉ giao hàng:
+    <form action="/orders/buynow" method="post">
+        <input type="text" name="diachi" id="diachi" width="100%" value="<%=user.address%>">
+        <input type="submit" value="Xác định mua" class="btn-primary btn">
+    </form>
+
+        
+    <%} else{%>
+        <h3 class="text-center">Giỏ hàng không có sản phẩm</h3>
+        <%}%>
+        <script>
+            $(function(){
+            
+ $('a.clearcart').on('click',function(e){
+    
+     if(!confirm('Bạn muốn dọn sạch giỏ hàng???'))  e.preventDefault()
+ })
+        
+     
+           
+})       
+        </script>
+<%- include('_layouts/footer'); %>

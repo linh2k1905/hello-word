@@ -1,0 +1,57 @@
+
+<%- include('../_layouts/adminheader'); %>
+<h2 class="page-title">Chọn người giao hàng</h2>
+<a href="/admin/shippers" class="btn btn-primary">Trở về</a>
+<form action="/admin/shippers/add_shiping/<%=order.id%>" method="post">
+
+    <div class="form-group">
+        <label for="">Mã hóa đơn</label>
+        <input type="text"  class="form-control" name="id"  value = "<%= order.id %>" >
+    </div>
+
+    <div class="form-group">
+        <label for="">Tên người đặt</label>
+        <input type="text"  class="form-control" name="username"  value = "<%= order.username %>" >
+    </div>
+    <div class="form-group">
+        <label for="">Địa chỉ </label>
+        <input type="text"  class="form-control" name="address"  value = "<%= order.address %>" >
+    </div>
+    <div class="form-group">
+        <label for="">Người giao hàng</label>
+        <select name="shipper" class="form-control">
+
+            <%shippers.forEach(function(shipper){%>
+               
+                <option value="<%=shipper.id%>">
+                    <%= shipper.name %>
+                </option>
+            <% })%>
+        </select>
+    </div>
+
+    <button class="btn btn-primary">Giao hàng</button>
+    
+</form>
+<!-- Dropzone CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" type="text/css">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Dropzone JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+<script>
+
+    Dropzone.options.dropzoneForm={
+
+        acceptedFiles:"image/*",
+        init:function(){
+            this.on("queuecomplete",function(file){
+
+
+            })
+        }
+    }
+</script>
+<%- include('../_layouts/adminfooter');%>

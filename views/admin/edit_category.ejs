@@ -1,0 +1,13 @@
+
+<%- include('../_layouts/adminheader'); %>
+<h2 class="page-title">Sửa loại sản phẩm </h2>
+<a href="/admin/categories" class="btn btn-primary">Trở về</a>
+<form action="/admin/categories/edit-category/<%= id%>" method="post">
+    <div class="form-group">
+        <label for="title">Tên loại sản phẩm</label>
+        <input type="text"  class="form-control" name="title"  value= "<%= title %>" placeholder="Title">
+    </div>
+       <button>Sửa</button>
+   
+</form>
+<%- include('../_layouts/adminfooter');%>

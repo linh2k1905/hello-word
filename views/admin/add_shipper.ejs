@@ -1,0 +1,36 @@
+<%- include('../_layouts/adminheader'); %>
+<h3><%-title%></h3>
+<a href="/admin/shippers/" class="btn btn-primary">Trở về</a>
+<form action="/admin/shippers/add" method="post">
+    <div class="form-group">
+        <label for="name">Họ và Tên </label>
+        <input type="text"  class="form-control" name="name"   placeholder="Tên nhân viên">
+    </div>
+
+    <div class="form-group">
+        <label for="tel">Số điện thoại</label>
+        <input type="text"  class="form-control" name="tel"   placeholder="Số điện thoại">
+    </div>
+    <div class="form-group">
+        <label for="cmnd">Chứng minh nhân dân</label>
+        <input type="text"  class="form-control" name="cmnd"   placeholder="Chứng minh nhân dân">
+    </div>
+    <div class="form-group">
+        <label for="address">Địa chỉ</label>
+        <input type="text"  class="form-control" name="address"   placeholder="Địa chỉ">
+    </div>
+    <div class="form-group">
+        <label for="tel">Lương</label>
+        <input type="text"  class="form-control" name="salery"   placeholder="Lương">
+    </div>
+    <div class="form-group">
+        <label for="birthyear">Năm sinh</label>
+        <input type="text"  class="form-control" name="birthyear"   placeholder="Năm sinh">
+    </div>
+    
+    
+    <button type="submit"  class="btn btn-primary" > Thêm</button>
+    
+
+</form>
+<%- include('../_layouts/adminfooter'); %>

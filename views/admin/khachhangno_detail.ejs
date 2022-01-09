@@ -1,0 +1,45 @@
+
+<%- include('../_layouts/adminheader'); %>
+
+<a href="/admin/statistics/khachhangno" class="btn btn-primary">Trở về</a>
+
+<h2 class="page-title">Thanh toán ghi nợ</h2>
+
+    <p>Tổng số hóa đơn ghi nợ:<b class="tong"><%= count%></b></p>
+    <p>Khách hàng nợ</p><h3><%= khachhangno.name%></h3>
+  <% var tong= 0%>
+             
+           
+    <table class="table table-striped table-dark  ">
+        <thead class="thead-dark">
+            <tr class="home">
+                <th>Mã hóa đơn</th>
+                <th>Nông dân </th>
+                <th>Địa chỉ</th>
+                <th>Số điện thoại</th>
+                
+                <th>Trạng thái</th>
+                <th>Chi tiết đơn </th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            <%orders.forEach(function(order){%>
+                <tr>
+                    <td><%=order._id%></td>
+                    <td><%=order.username%></td>
+                    <td><%=order.address%></td>
+                    <td><%=order.tel%></td>
+                    <td><%=order.status%></td>
+                    <% tong += +order.total %>
+                   <td> <a href="/admin/orders/pay/<%=order._id%>" class="btn ">Thanh toán</a></td>
+              
+                </tr>
+               
+           <% })%>
+        
+        </tbody>
+    </table>
+    Tổng tiền phải trả:<b class="tong"><%= tong%> Đ</b>
+   
+<%- include('../_layouts/adminfooter');%>

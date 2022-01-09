@@ -1,0 +1,21 @@
+<%- include('_layouts/header'); %>
+<%-title%>
+<form action="/users/login" method="post">
+   
+    <div class="form-group">
+        <label for="username">Biệt danh</label>
+        <input type="text"  class="form-control" name="username"   placeholder="Ví dụ HaiLua1233 ">
+    </div>
+    <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password"  class="form-control" name="password"   placeholder="Mật khẩu phải chứa ký tự đặc biệt, số ,chữ hoa ">
+    </div>
+
+    
+    
+    <button type="submit"  class="btn btn-success" >Đăng nhập</button>
+    
+
+</form>
+<H3>Bạn chưa có tài khoản ? <a href="/users/register" >Đăng ký tài khoản</a></H3>
+<%- include('_layouts/footer'); %>

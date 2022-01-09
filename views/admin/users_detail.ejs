@@ -1,0 +1,31 @@
+<%- include('../_layouts/adminheader'); %>
+<a href="/admin/users" class="btn btn-primary">Trở về</a>
+<h3> Thông tin người dùng</h3>
+<table class="table table-striped ">
+   
+            <tr><th>Tên</th><td><%= users.name%></td></tr>
+            <tr> <th>Số điện thoại </th><td><%= users.tel%></td></tr>
+            <tr><th>Địa chỉ</th> <td><%= users.address%></td></tr>
+            <tr><th>Tên đầy đủ</th><td><%= users.username%></td></tr>
+            <tr><th>Mật khẩu</th><td><%= users.password%></td></tr>
+            <tr><th>Vai trò</th> <%if(users.admin==0){%>
+                <td>Nông dân</td>
+               <%}else{%>
+                <td>Quản trị</td></tr>
+            <%}%>
+            
+        
+
+ 
+   
+    
+    
+    
+   
+    
+    
+      
+    
+
+</table>
+<%- include('../_layouts/adminfooter'); %>
